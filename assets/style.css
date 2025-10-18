@@ -1,0 +1,282 @@
+/* ==============================
+   Global Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==============================
+   Grid Container Layout
+============================== */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* nav di kiri, konten di kanan */
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ==============================
+   Header / Judul
+============================== */
+.judul {
+  grid-column: 1 / 3;
+  text-align: center;
+  font-size: 2vw;
+  padding: 1.5rem 0;
+  background: #003366;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   Navigation
+============================== */
+nav {
+  grid-row: 2 / 3;
+  background: #1a1a1a;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  width: 100%;
+}
+
+nav ul li {
+  margin: 1rem 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00b4d8;
+}
+
+/* ==============================
+   Main Content Area (Flexbox)
+============================== */
+main {
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background: white;
+}
+
+/* ==============================
+   Section Styling
+============================== */
+section {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ==============================
+   Hero Section (Flexbox)
+============================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero h2 {
+  color: #003366;
+  font-weight: 600;
+}
+
+.hero img {
+  /* max-width: 250px; */
+  /* width: 150px; */
+
+  height: 10vw;
+  border-radius: 50%;
+  border: 3px solid #003366;
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.bio {
+  margin-top: 1rem;
+}
+
+.social-media {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media a {
+  color: #003366;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #0077b6;
+}
+
+/* ==============================
+   Pendidikan, Hobi, Organisasi
+============================== */
+#pendidikan ul,
+#hobi ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
+
+.organisasi table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.organisasi th {
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+}
+
+.organisasi td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* ==============================
+   Contact Form
+============================== */
+.kontak {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kontak a:hover {
+  color: #1ebe5d;
+}
+
+.kontak table {
+  margin-top: 1rem;
+  width: 100%;
+
+  /* border: 1px solid red; */
+}
+
+.kontak input[type="text"],
+.kontak input[type="email"],
+.kontak textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.kontak input[type="submit"] {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.kontak input[type="submit"]:hover {
+  background: #00509e;
+}
+.kontak a {
+  align-self: flex-end; /* posisi di kanan */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #25d366;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.kontak img {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* ==============================
+   Footer
+============================== */
+.footer {
+  grid-column: 1 / 3;
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    grid-row: auto;
+    flex-direction: row;
+    justify-content: center;
+    background: #003366;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    margin-top: 1rem;
+  }
+}
